@@ -5,7 +5,7 @@ function Footer() {
     return (
         <div className={footerStyles.footer}>
             <div>
-                <button className={footerStyles.resetBtn}>Reset Game</button>
+                <button className={footerStyles.restartBtn}>Restart Game</button>
             </div>
             <div>
                 <button className={footerStyles.suggestBtn}>Suggest Move</button>

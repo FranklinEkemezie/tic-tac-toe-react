@@ -17,11 +17,11 @@
     border: 2px solid #f6f6f6;
 
 }
-.resetBtn {
+.restartBtn {
     border: 2px solid #f56f7f;
     background-color: #f56f7f;
 }
-.resetBtn:hover {
+.restartBtn:hover {
     background-color: #ef6d7d;
 }
 .suggestBtn {

@@ -1,5 +1,6 @@
 import timerStyles from '../assets/styles/timer.module.css';
 import {useEffect, useState} from "react";
+import useFormatTime from "../hooks/useFormatTime.js";
 
 function Timer() {
 
@@ -7,22 +8,6 @@ function Timer() {
 
     const [timeLeft, setTimeLeft] = useState(totalTime);
 
-    const formatTime = (timeInSecs) => {
-        let timeStr = "";
-
-        const secsInHr = 60 * 60;
-        const hrsInTime = Math.floor(timeInSecs / secsInHr);
-
-        const hrs = hrsInTime.toString().padStart(2, "0");
-
-        timeInSecs -= hrsInTime * secsInHr;
-        const mins = Math.floor(timeInSecs / 60).toString().padStart(2, "0");
-        const secs = (timeInSecs % 60).toString().padStart(2, "0");
-
-        timeStr = `${hrs}:${mins}:${secs}`;
-
-        return timeStr;
-    }
 
     useEffect(() => {
         const timerInterval = setInterval(() => {
@@ -40,7 +25,7 @@ function Timer() {
                 X
             </span>
             <span className={timerStyles.timerDisplay}>
-                {formatTime(timeLeft)}
+                {useFormatTime(timeLeft)}
             </span>
         </div>
     );

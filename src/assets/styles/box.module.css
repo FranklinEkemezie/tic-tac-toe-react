@@ -1,0 +1,12 @@
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #C1C1C1;
+    background-color: #f6f6f6;
+}
+
+.box:hover {
+    background-color: #efefef;
+}

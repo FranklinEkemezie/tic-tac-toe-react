@@ -1,0 +1,33 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    padding: 1.6rem 0;
+}
+.footer button {
+    display: flex;
+    color: #f6f6f6;
+    padding: .48rem 1.2rem;
+    font-size: medium;
+    border-radius: 24em;
+    font-family: "Montserrat SemiBold", monospace;
+    animation: ease .4s;
+    border: 2px solid #f6f6f6;
+
+}
+.resetBtn {
+    border: 2px solid #f56f7f;
+    background-color: #f56f7f;
+}
+.resetBtn:hover {
+    background-color: #ef6d7d;
+}
+.suggestBtn {
+    border: 2px solid #95e461;
+    background-color: #95e461;
+}
+.suggestBtn:hover {
+    background-color: #8ad656;
+}

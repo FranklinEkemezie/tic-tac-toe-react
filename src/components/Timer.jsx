@@ -1,32 +1,29 @@
 import timerStyles from '../assets/styles/timer.module.css';
-import {useEffect, useState} from "react";
+import {useContext} from "react";
 import useFormatTime from "../hooks/useFormatTime.js";
+import GameContext from "../contexts/gameContext.jsx";
 
 function Timer() {
+    const { 
+        currentState, startGame, nextPlayer, playTimeLeft 
+    } = useContext(GameContext);
 
-    const totalTime = 400;
-
-    const [timeLeft, setTimeLeft] = useState(totalTime);
-
-
-    useEffect(() => {
-        const timerInterval = setInterval(() => {
-            setTimeLeft(prevState => prevState - 1);
-        }, 1000);
-
-        return () => {
-            clearInterval(timerInterval);
-        }
-    }, []);
+    const timerTitle = ({
+        'OFF': (
+            <button className={timerStyles.startGameBtn} onClick={startGame}>
+                Start Game
+            </button>
+        ),
+        'ON': useFormatTime(playTimeLeft),
+        'OVER': 'Game Over'
+    })[currentState];
 
     return (
         <div className={timerStyles.timerContainer}>
-            <span className={timerStyles.currentPlayerDisplay}>
-                X
+            <span className={timerStyles.nextPlayerDisplay}>
+                {nextPlayer || "❔"}
             </span>
-            <span className={timerStyles.timerDisplay}>
-                {useFormatTime(timeLeft)}
-            </span>
+            <span className={timerStyles.timerDisplay}>{timerTitle}</span>
         </div>
     );
 }

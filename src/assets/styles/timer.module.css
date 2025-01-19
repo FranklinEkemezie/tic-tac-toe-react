@@ -1,17 +1,17 @@
 .timerContainer {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     position: relative;
 
     padding: .4rem;
     font-size: medium;
+    font-family: inherit;
 }
-.currentPlayerDisplay {
+.nextPlayerDisplay {
     /* Center the current player */
     display: flex;
     align-items: center;
-    justify-content: center;
 
     /* Position */
     position: relative;
@@ -19,16 +19,38 @@
 
     border-radius: 2.4rem 0 0 1.2rem;
     padding: .4rem 1.2rem;
-    width: 2.4rem;
+    width: 4rem;
     color: white;
     font-weight: bolder;
     border: 2px solid white;
 }
 .timerDisplay {
-    min-width: 6.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 8rem;
     text-align: center;
     background-color: white;
-    padding: .4rem 1.2rem;
     border: 2px solid white;
+
     border-radius: 1.6rem 1.2rem 2.4rem 1.2rem;
+    z-index: 1;
+}
+.startGameBtn {
+    width: 100%;
+    border: 1px solid white;
+    font-size: medium;
+    font-family: inherit;
+    background-color: white;
+    border-radius: 1.6rem 1.2rem 2.4rem 1.2rem;
+    padding: .4rem 1.2rem;
+    z-index: 2;
+}
+.startGameBtn:hover {
+    background-color: #f8f8f8;
+}
+.startGameBtn:focus {
+    border-color: #f8f8f8;
+    background-color: #f8f8f8;
 }

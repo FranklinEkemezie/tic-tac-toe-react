@@ -1,14 +1,21 @@
 import boardStyles from '../assets/styles/board.module.css';
 import Box from "./Box.jsx";
 
-function Board() {
+function Board({ board, highlightBoxes }) {
 
     return (
         <div className={boardStyles.boardContainer}>
             <div className={boardStyles.board}>
                 {
-                    Array(9).fill(null).map(() => (
-                        <Box key={""} />
+                    board.map((_, i) => (
+                        <Box
+                            key={`box_${i}`}
+                            boxIndex={i}
+                            highlight={
+                                Array.isArray(highlightBoxes) && 
+                                highlightBoxes.includes(i)
+                            }
+                        />
                     ))
                 }
             </div>

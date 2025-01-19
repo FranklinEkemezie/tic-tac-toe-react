@@ -3,10 +3,28 @@
     align-items: center;
     justify-content: center;
 
+    position: relative;
+
     border: 1px solid #C1C1C1;
     background-color: #f6f6f6;
 }
-
 .box:hover {
     background-color: #efefef;
+}
+.highlight {
+    background-color: #3187db;
+}
+.highlight:hover {
+    background-color: #2e78c2;
+}
+.boxIndex {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: .4rem;
+    font-size: small;
+    color: rgba(0, 0, 0, 0.6);
+}
+.highlight .boxIndex {
+    color: rgba(255, 255, 255, 0.6);
 }

@@ -1,0 +1,44 @@
+.modalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.64);
+    backdrop-filter: blur(4px);
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    padding: 1.2rem;
+}
+.modalContainer {
+    width: 100%;
+    max-width: 480px;
+
+    background-color: rgba(246, 246, 246, 0.8);
+    margin: 0 auto;
+    padding: 1.2rem;
+    border-radius: .64rem;
+}
+.modalContainer > div {
+    padding: .4rem 0;
+}
+.restartBtn {
+    display: flex;
+    color: #f6f6f6;
+    padding: .48rem 1.2rem;
+    font-size: medium;
+    border-radius: 24em;
+    font-family: "Montserrat SemiBold", monospace;
+    border: 2px solid #f6f6f6;
+    background: linear-gradient(to right, #07c8fa, #3187db);
+    transition: ease-in-out;
+    cursor: pointer;
+}
+.restartBtn:hover {
+    background: linear-gradient(to left, #07c8fa, #3187db);
+}

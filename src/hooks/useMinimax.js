@@ -1,4 +1,3 @@
-import { max, min } from "mathjs";
 import useGame from "./useGame";
 
 
@@ -62,7 +61,7 @@ export function minmax(board, mainPlayer, player, players, isMaxPlayerTurn=true,
                 move
             )).score;
         
-            maxBoardEval = max(maxBoardEval, moveEval);
+            maxBoardEval = Math.max(maxBoardEval, moveEval);
             bestMove = moveEval >= maxBoardEval ? move : bestMove;
 
             // Short circuit here
@@ -95,7 +94,7 @@ export function minmax(board, mainPlayer, player, players, isMaxPlayerTurn=true,
                 parentMove
             )).score;
 
-            minBoardEval = min(minBoardEval, moveEval);
+            minBoardEval = Math.min(minBoardEval, moveEval);
             bestMove = moveEval <= minBoardEval ? move : bestMove;
 
             // Short-circuit here
